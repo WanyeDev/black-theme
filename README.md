@@ -28,11 +28,12 @@ Settings popup (Chinese / English):
 |---|---|
 | ![popup zh](docs/screenshots/shot-popup.png) | ![popup en](docs/screenshots/shot-popup-en.png) |
 
-Page rendering — dark / sepia / off:
+Real websites (Bing / Baidu search, live captures) — dark / sepia / off:
 
-| Dark | Sepia | Off |
-|---|---|---|
-| ![dark](docs/screenshots/shot-1-on.png) | ![sepia](docs/screenshots/shot-3-sepia.png) | ![off](docs/screenshots/shot-2-off.png) |
+| Site | Dark | Sepia | Off |
+|---|---|---|---|
+| Bing | ![bing dark](docs/screenshots/real-bing-dark.png) | ![bing sepia](docs/screenshots/real-bing-sepia.png) | ![bing off](docs/screenshots/real-bing-off.png) |
+| Baidu | ![baidu dark](docs/screenshots/real-baidu-dark.png) | ![baidu sepia](docs/screenshots/real-baidu-sepia.png) | ![baidu off](docs/screenshots/real-baidu-off.png) |
 
 ## Install (unpacked)
 

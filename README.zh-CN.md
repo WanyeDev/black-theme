@@ -28,11 +28,12 @@
 |---|---|
 | ![弹窗中文](docs/screenshots/shot-popup.png) | ![弹窗英文](docs/screenshots/shot-popup-en.png) |
 
-页面渲染——黑暗 / 护眼 / 关闭：
+真实网站（Bing / 百度搜索页，实时截图）——黑暗 / 护眼 / 关闭：
 
-| 黑暗 | 护眼 | 关闭 |
-|---|---|---|
-| ![黑暗](docs/screenshots/shot-1-on.png) | ![护眼](docs/screenshots/shot-3-sepia.png) | ![关闭](docs/screenshots/shot-2-off.png) |
+| 网站 | 黑暗 | 护眼 | 关闭 |
+|---|---|---|---|
+| Bing | ![Bing 黑暗](docs/screenshots/real-bing-dark.png) | ![Bing 护眼](docs/screenshots/real-bing-sepia.png) | ![Bing 关闭](docs/screenshots/real-bing-off.png) |
+| 百度 | ![百度黑暗](docs/screenshots/real-baidu-dark.png) | ![百度护眼](docs/screenshots/real-baidu-sepia.png) | ![百度关闭](docs/screenshots/real-baidu-off.png) |
 
 ## 安装（解压加载）
 
