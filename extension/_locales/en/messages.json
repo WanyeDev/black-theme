@@ -1,0 +1,5 @@
+{
+  "extName": { "message": "Pure Black Theme" },
+  "extDesc": { "message": "Pure black theme for every website: dark/sepia modes, brightness & contrast, permanent site filter. Pair with the browser-theme for the Chrome UI." },
+  "cmdToggleSite": { "message": "Toggle dark theme for the current site" }
+}

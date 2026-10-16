@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-CN" data-mode="dark">
+<meta charset="utf-8">
+<title>纯黑主题</title>
+<style>
+  :root {
+    --canvas: #0d1117;
+    --panel: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-dim: rgba(88, 166, 255, 0.15);
+  }
+  body[data-mode="sepia"] { --accent: #e3b341; --accent-dim: rgba(227, 179, 65, 0.15); }
+
+  * { box-sizing: border-box; }
+  body {
+    width: 264px;
+    margin: 0;
+    padding: 0;
+    font: 13px/1.6 system-ui, "Microsoft YaHei", sans-serif;
+    background: var(--canvas);
+    color: var(--text);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px 10px;
+  }
+  header svg { width: 20px; height: 20px; flex: none; }
+  header .name { font-weight: 600; font-size: 14px; }
+  header .host {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--muted);
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  main { padding: 0 14px 14px; }
+
+  .seg {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px;
+  }
+  .seg button {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    padding: 5px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .seg button:hover { color: var(--text); }
+  .seg button.active { background: var(--accent-dim); color: var(--accent); font-weight: 600; }
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .row label { color: var(--muted); flex: none; }
+  .row input[type="range"] {
+    flex: 1;
+    accent-color: var(--accent);
+    min-width: 0;
+  }
+  .row input[type="range"]:disabled { opacity: 0.35; }
+  .row .val { width: 38px; text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+
+  .group { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 10px; }
+  .gtitle {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  .site-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 8px;
+  }
+  .switch { position: relative; width: 34px; height: 18px; flex: none; }
+  .switch input {
+    appearance: none;
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    border-radius: 999px;
+    background: var(--border);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .switch input::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--text);
+    transition: left 0.15s;
+  }
+  .switch input:checked { background: var(--accent); }
+  .switch input:checked::after { left: 18px; background: #fff; }
+  .switch input:disabled { opacity: 0.35; cursor: default; }
+
+  form { display: flex; gap: 6px; }
+  form input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    padding: 5px 8px;
+    font: inherit;
+  }
+  form input[type="text"]::placeholder { color: var(--muted); }
+  form input[type="text"]:focus { outline: none; border-color: var(--accent); }
+  form button {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    padding: 5px 12px;
+    font: inherit;
+    cursor: pointer;
+  }
+  form button:hover { border-color: var(--accent); color: var(--accent); }
+
+  #list { margin-top: 8px; }
+  #list .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 2px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  #list .item span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #list .item button {
+    border: none;
+    background: none;
+    color: #f85149;
+    padding: 0 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  #list .empty { color: var(--muted); font-size: 11px; padding: 2px; }
+
+  footer {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #lang {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 2px 0;
+  }
+  #lang:hover { color: var(--accent); }
+  #lang option { background: var(--panel); color: var(--text); }
+  footer button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 2px 4px;
+  }
+  footer button:hover { color: #f85149; }
+</style>
+<header>
+  <svg viewBox="0 0 128 128" aria-hidden="true">
+    <defs>
+      <mask id="c"><circle cx="60" cy="66" r="40" fill="#fff"/><circle cx="84" cy="46" r="34" fill="#000"/></mask>
+    </defs>
+    <circle cx="64" cy="64" r="62" fill="#161b22" stroke="#30363d" stroke-width="4"/>
+    <circle cx="60" cy="66" r="40" fill="#e6edf3" mask="url(#c)"/>
+    <circle cx="94" cy="86" r="5" fill="#58a6ff"/>
+  </svg>
+  <span class="name" data-i18n="title">纯黑主题</span>
+  <span class="host" id="host"></span>
+</header>
+<main>
+  <div class="seg" role="group" aria-label="mode">
+    <button type="button" id="mode-off" data-i18n="modeOff">关闭</button>
+    <button type="button" id="mode-dark" data-i18n="modeDark">黑暗</button>
+    <button type="button" id="mode-sepia" data-i18n="modeSepia">护眼</button>
+  </div>
+  <div class="row">
+    <label for="brightness" data-i18n="brightness">亮度</label>
+    <input type="range" id="brightness" min="60" max="140" step="5" value="100">
+    <span class="val" id="bval">100%</span>
+  </div>
+  <div class="row">
+    <label for="contrast" data-i18n="contrast">对比</label>
+    <input type="range" id="contrast" min="60" max="140" step="5" value="100">
+    <span class="val" id="cval">100%</span>
+  </div>
+  <div class="group">
+    <div class="gtitle" data-i18n="siteGroup">站点过滤</div>
+    <label class="site-row">
+      <span data-i18n="siteToggle">当前网站保持原样</span>
+      <span class="switch"><input type="checkbox" id="site"></span>
+    </label>
+    <form id="add">
+      <input type="text" id="input" data-i18n-ph="inputPlaceholder" placeholder="输入网址，如 github.com">
+      <button type="submit" data-i18n="add">添加</button>
+    </form>
+    <div id="list"></div>
+  </div>
+  <footer>
+    <select id="lang" aria-label="language">
+      <option value="auto">中文 / EN</option>
+      <option value="zh">中文</option>
+      <option value="en">English</option>
+    </select>
+    <button type="button" id="reset" data-i18n="reset">恢复默认设置</button>
+  </footer>
+</main>
+<script src="popup.js"></script>

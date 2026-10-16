@@ -1,0 +1,20 @@
+/* Look calibrated to GitHub Primer Dark: canvas #0d1117, text #e6edf3.
+   Inputs are pre-distorted so invert(1) hue-rotate(180deg) lands exactly on the
+   target colors; the R/B swap vs intuition compensates hue-rotate's shift. */
+/* shortcut: filter changes the containing block of position:fixed/sticky,
+   so floating elements may scroll with the page on some sites */
+:root[data-bt="on"] {
+  filter: invert(1) hue-rotate(180deg) !important;
+  background-color: rgb(232, 238, 242) !important; /* -> #0d1117 */
+  color: rgb(25, 18, 12) !important; /* -> #e6edf3 */
+}
+
+:root[data-bt="on"] body {
+  background-color: rgb(232, 238, 242) !important;
+  color: rgb(25, 18, 12) !important;
+}
+
+/* Re-invert media so photos and videos keep their original colors */
+:root[data-bt="on"] :is(img, video, picture, canvas, image) {
+  filter: invert(1) hue-rotate(180deg) !important;
+}

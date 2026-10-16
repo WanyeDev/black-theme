@@ -1,0 +1,5 @@
+{
+  "extName": { "message": "纯黑主题（网页）" },
+  "extDesc": { "message": "给所有网站套上纯黑主题：黑暗/护眼模式、亮度对比度调节、永久站点过滤。浏览器界面请搭配 browser-theme 主题使用。" },
+  "cmdToggleSite": { "message": "切换当前网站的黑白主题" }
+}
