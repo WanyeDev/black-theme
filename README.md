@@ -74,6 +74,22 @@ python tools/pack.py         # pack black-theme.crx
 
 No data collection, no network requests, no analytics. All settings live in `chrome.storage.local` on your machine.
 
+## Security
+
+Audited attack surface (2026-10):
+
+- **Minimal permissions**: only `storage` + `activeTab`; no host permissions, no `<all_urls>` data access, no devtools access.
+- **Zero network activity**: no fetch/XHR/WebSocket; MV3 default CSP forbids remote code and none is used.
+- **No injection sinks**: no `innerHTML`, no `eval`/`new Function`; all dynamic DOM writes go through `textContent`.
+- **Untrusted values hardened**: filter parameters are coerced via `Number()` with fallbacks; hostnames are normalized through `new URL()` before storage; attribute values are fixed strings.
+- **Key hygiene**: the signing `.pem` is git-ignored and never distributed.
+
+Known inherent caveat (same class as any dark-mode extension): content scripts run on all http(s) pages, so a page can technically detect the `data-bt` attribute or the filter effect. No page content is ever read or transmitted.
+
+## Disclaimer
+
+This extension is provided "as is" under the MIT License, without warranty of any kind, express or implied. The authors accept no liability for any display issues, misrendered content, or losses arising from its use. Theme filters may alter how some websites appear — exclude any site via the site filter when its exact presentation matters. Use on production workflows (e.g. design QA, color-sensitive work) is at your own discretion.
+
 ## License
 
 [MIT](LICENSE)
