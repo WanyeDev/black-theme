@@ -20,6 +20,20 @@
 - **恢复默认设置**一键重置
 - 零网络请求、无统计埋点，设置只存于本地 `chrome.storage.local`
 
+## 效果图
+
+设置弹窗（中文 / 英文）：
+
+| 中文 | English |
+|---|---|
+| ![弹窗中文](docs/screenshots/shot-popup.png) | ![弹窗英文](docs/screenshots/shot-popup-en.png) |
+
+页面渲染——黑暗 / 护眼 / 关闭：
+
+| 黑暗 | 护眼 | 关闭 |
+|---|---|---|
+| ![黑暗](docs/screenshots/shot-1-on.png) | ![护眼](docs/screenshots/shot-3-sepia.png) | ![关闭](docs/screenshots/shot-2-off.png) |
+
 ## 安装（解压加载）
 
 1. 打开 `chrome://extensions`，右上角打开「开发者模式」。

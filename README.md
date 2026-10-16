@@ -20,6 +20,20 @@ A pure black theme for Chrome that covers **both** web pages and the browser UI.
 - **Reset to defaults** with one click
 - Zero network requests, no analytics, settings stored only in `chrome.storage.local`
 
+## Screenshots
+
+Settings popup (Chinese / English):
+
+| 中文 | English |
+|---|---|
+| ![popup zh](docs/screenshots/shot-popup.png) | ![popup en](docs/screenshots/shot-popup-en.png) |
+
+Page rendering — dark / sepia / off:
+
+| Dark | Sepia | Off |
+|---|---|---|
+| ![dark](docs/screenshots/shot-1-on.png) | ![sepia](docs/screenshots/shot-3-sepia.png) | ![off](docs/screenshots/shot-2-off.png) |
+
 ## Install (unpacked)
 
 1. Open `chrome://extensions`, enable **Developer mode**.
