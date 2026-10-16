@@ -1,0 +1,40 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>纯黑主题测试页（GitHub 外观页风格）</title>
+<style>
+  body { font: 14px/1.5 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; color: #1f2328; background: #fff; max-width: 860px; margin: 0 auto; padding: 24px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .muted { color: #59636e; }
+  .layout { display: flex; gap: 32px; }
+  nav ul { list-style: none; padding: 0; border-right: 1px solid #d1d9e0; }
+  nav a { color: #0969da; text-decoration: none; display: block; padding: 6px 12px; }
+  .theme-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .theme { border: 1px solid #d1d9e0; border-radius: 6px; overflow: hidden; }
+  .theme .preview { background: #f6f8fa; border-bottom: 1px solid #d1d9e0; padding: 16px; }
+  .theme .preview .bar { background: #fff; border: 1px solid #d1d9e0; border-radius: 4px; padding: 6px; margin-bottom: 6px; }
+  .theme .label { padding: 8px 12px; }
+  button { background: #f6f8fa; border: 1px solid #d1d9e0; border-radius: 6px; padding: 5px 16px; color: #1f2328; }
+  a.link { color: #0969da; }
+</style>
+<h1>外观设置</h1>
+<p class="muted">选择界面主题偏好（本页复刻 GitHub 浅色页面结构，用于对比暗色观感）</p>
+<div class="layout">
+  <nav>
+    <ul>
+      <li><a href="#">外观</a></li>
+      <li><a href="#">辅助功能</a></li>
+      <li><a href="#">通知</a></li>
+    </ul>
+  </nav>
+  <div>
+    <div class="theme-grid">
+      <div class="theme"><div class="preview"><div class="bar">Header</div><div class="bar" style="height:48px">Content</div></div><div class="label">浅色默认</div></div>
+      <div class="theme"><div class="preview"><div class="bar">Header</div><div class="bar" style="height:48px">Content</div></div><div class="label">浅色高对比</div></div>
+      <div class="theme"><div class="preview"><div class="bar">Header</div><div class="bar" style="height:48px">Content</div></div><div class="label">深色默认</div></div>
+      <div class="theme"><div class="preview"><div class="bar">Header</div><div class="bar" style="height:48px">Content</div></div><div class="label">深色高对比</div></div>
+    </div>
+    <p><a class="link" href="#">了解更多主题设置</a></p>
+    <p><button>保存偏好</button></p>
+    <p class="muted">媒体还原测试（红圆蓝块应保持原色）：<img alt="媒体测试" width="120" height="60" src="dot.svg"></p>
+  </div>
+</div>
