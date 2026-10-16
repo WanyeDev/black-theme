@@ -1,0 +1,10 @@
+# 签名私钥与打包产物：绝不入库（pem 泄露可冒充扩展身份，crx 可随时重建）
+*.pem
+*.crx
+
+# 测试运行产物
+test/last-run.log
+
+# Python
+__pycache__/
+*.pyc
